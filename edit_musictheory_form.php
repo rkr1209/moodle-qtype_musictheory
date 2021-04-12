@@ -812,6 +812,18 @@ class qtype_musictheory_edit_form extends question_edit_form {
             'natural'  => get_string('scaletype_natural', 'qtype_musictheory'),
             'harmonic' => get_string('scaletype_harmonic', 'qtype_musictheory'),
             'melodic'  => get_string('scaletype_melodic', 'qtype_musictheory'),
+            'pentatonic_major'  => get_string('scaletype_pentatonic_major', 'qtype_musictheory'),
+            'pentatonic_minor'  => get_string('scaletype_pentatonic_minor', 'qtype_musictheory'),
+            'blues'  => get_string('scaletype_blues', 'qtype_musictheory'),
+            'ionian'  => get_string('scaletype_ionian', 'qtype_musictheory'),
+            'dorian'  => get_string('scaletype_dorian', 'qtype_musictheory'),
+            'phrygian'  => get_string('scaletype_phrygian', 'qtype_musictheory'),
+            'lydian'  => get_string('scaletype_lydian', 'qtype_musictheory'),
+            'mixolydian'  => get_string('scaletype_mixolydian', 'qtype_musictheory'),
+            'aeolian'  => get_string('scaletype_aeolian', 'qtype_musictheory'),
+            'locrian'  => get_string('scaletype_locrian', 'qtype_musictheory'),
+          /*  'chromatic'  => get_string('scaletype_chromatic', 'qtype_musictheory'), */ //TODO
+
         );
 
         if ($multiselect) {
@@ -837,12 +849,10 @@ class qtype_musictheory_edit_form extends question_edit_form {
      * @param string $labelkey The key to use for the option label.
      */
     private function add_chordquality_option($mform, $questionfield, $multiselect, $labelkey) {
-        $selectoptionsquality = array(
-            'major'      => get_string('major', 'qtype_musictheory'),
-            'minor'      => get_string('minor', 'qtype_musictheory'),
-            'augmented'  => get_string('augmented', 'qtype_musictheory'),
-            'diminished' => get_string('diminished', 'qtype_musictheory'),
-        );
+        $selectoptionsquality = array();
+        foreach (Chord::$mapping as $key => $value) {
+            $selectoptionsquality[$key] = get_string($key, 'qtype_musictheory');
+        }
 
         if ($multiselect) {
             $selectattr = array('multiple'
@@ -1215,7 +1225,17 @@ class qtype_musictheory_validation {
         $errors = array();
 
         $comptonic = new Note($data['musictheory_givennoteletter'], $data['musictheory_givennoteaccidental'], 4);
-        $mode = ($data['musictheory_scaletype'] == 'major') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'pentatonic_major') ? 'M' : 'm';
+      /*
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'ionian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'dorian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'phrygian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'lydian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'scaletype_mixolydian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'aeolian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'locrian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'chromatic') ? 'M' : 'm';
+      */
         $validkeys = Tonality::getValidKeys($mode);
         $isvalidtonic = false;
         foreach ($validkeys as $key) {
@@ -1298,22 +1318,12 @@ class qtype_musictheory_validation {
     public static function validate_chordquality_options($data) {
         $errors = array();
 
-        switch ($data['musictheory_chordquality']) {
-            case 'major':
-                $quality = 'M';
-                break;
-            case 'minor':
-                $quality = 'm';
-                break;
-            case 'diminished':
-                $quality = 'D';
-                break;
-            case 'augmented':
-                $quality = 'A';
-                break;
-            default:
-                $quality = 'M';
-        }
+        $dataquality = $data['musictheory_chordquality'];
+        if (!isset(Chord::$mapping[$dataquality]))
+            $quality = 'M';
+        else
+            $quality = Chord::$mapping[$dataquality];
+
         $root = new Note($data['musictheory_givennoteletter'], $data['musictheory_givennoteaccidental']);
         $chord = new Chord($root, $quality, 0);
 
