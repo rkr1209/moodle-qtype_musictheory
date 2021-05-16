@@ -163,6 +163,9 @@ class qtype_musictheory_scale_identify_renderer extends qtype_musictheory_render
             case 'harmonic':
                 $scale = new HarmonicMinorScale($tonic);
                 break;
+            case 'jazzmelodicminor':
+                $scale = new JazzMelodicMinorScale($tonic);
+                break;
             case 'melodic':
                 $scale = new MelodicMinorScale($tonic);
                 break;
@@ -184,8 +187,14 @@ class qtype_musictheory_scale_identify_renderer extends qtype_musictheory_render
             case 'phrygian':
                 $scale = new PhrygianScale($tonic);
                 break;
+            case 'phrygianmajor':
+                $scale = new PhrygianMajorScale($tonic);
+                break;
             case 'lydian':
                 $scale = new LydianScale($tonic);
+                break;
+            case 'lydianb7':
+                $scale = new Lydianb7Scale($tonic);
                 break;
             case 'mixolydian':
                 $scale = new MixolydianScale($tonic);
@@ -195,6 +204,9 @@ class qtype_musictheory_scale_identify_renderer extends qtype_musictheory_render
                 break;
             case 'locrian':
                 $scale = new LocrianScale($tonic);
+                break;
+            case 'altered':
+                $scale = new AlteredScale($tonic);
                 break;
             case 'chromatic':
                 $scale = new ChromaticScale($tonic);

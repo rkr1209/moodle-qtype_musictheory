@@ -437,7 +437,7 @@
 
   <xs:simpleType name="scaletype">
     <xs:restriction base="xs:string">
-      <xs:pattern value="major|natural|harmonic|melodic|pentatonic_major|pentatonic_minor|blues|ionian|dorian|phrygian|lydian|mixolydian|aeolian|locrian|chromatic"/>
+      <xs:pattern value="major|natural|harmonic|jazzmelodicminor|melodic|pentatonic_major|pentatonic_minor|blues|ionian|dorian|phrygian|phrygianmajor|lydian|lydianb7|mixolydian|aeolian|locrian|altered|chromatic"/>
     </xs:restriction>
   </xs:simpleType>
 

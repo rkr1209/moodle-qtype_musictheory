@@ -288,6 +288,7 @@ $string['scaletype'] = 'Scale type';
 $string['scaletype_major'] = 'Major';
 $string['scaletype_natural'] = 'Natural minor';
 $string['scaletype_harmonic'] = 'Harmonic minor';
+$string['scaletype_jazzmelodicminor'] = 'Jazz Melodic minor';
 $string['scaletype_melodic'] = 'Melodic minor';
 $string['scaletype_pentatonic_major'] = 'Pentatonic major';
 $string['scaletype_pentatonic_minor'] = 'Pentatonic minor';
@@ -295,10 +296,13 @@ $string['scaletype_blues'] = 'Blues';
 $string['scaletype_ionian'] = 'Ionian';
 $string['scaletype_dorian'] = 'Dorian';
 $string['scaletype_phrygian'] = 'Phrygian';
+$string['scaletype_phrygianmajor'] = 'Phrygian major';
 $string['scaletype_lydian'] = 'Lydian';
+$string['scaletype_lydianb7'] = 'Lydian Dominant';
 $string['scaletype_mixolydian'] = 'Mixolydian';
 $string['scaletype_aeolian'] = 'Aeolian';
 $string['scaletype_locrian'] = 'Locrian';
+$string['scaletype_altered'] = 'Altered';
 $string['scaletype_chromatic'] = 'Chromatic';
 
 // Harmonic function types.

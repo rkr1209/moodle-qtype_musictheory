@@ -663,10 +663,13 @@ NS.XMLConverter.prototype.getScaleWriteXML = function (input) {
         this.options.scaleType === 'ionian' ||
         this.options.scaleType === 'dorian' ||
         this.options.scaleType === 'phrygian' ||
+        this.options.scaleType === 'phrygianmajor' ||
         this.options.scaleType === 'lydian' ||
+        this.options.scaleType === 'lydianb7' ||
         this.options.scaleType === 'mixolydian' ||
         this.options.scaleType === 'aeolian' ||
         this.options.scaleType === 'locrian' ||
+        this.options.scaleType === 'altered' ||
         this.options.scaleType === 'chromatic'
         ) {
         key += 'M';
@@ -790,10 +793,13 @@ NS.XMLConverter.prototype.getScaleIdentifyXML = function (input) {
                 this.options.scaleType === 'ionian' ||
                 this.options.scaleType === 'dorian' ||
                 this.options.scaleType === 'phrygian' ||
+                this.options.scaleType === 'phrygianmajor' ||
                 this.options.scaleType === 'lydian' ||
+                this.options.scaleType === 'lydianb7' ||
                 this.options.scaleType === 'mixolydian' ||
                 this.options.scaleType === 'aeolian' ||
                 this.options.scaleType === 'locrian' ||
+                this.options.scaleType === 'altered' ||
                 this.options.scaleType === 'chromatic'
                 ) {
                 key += 'M';
