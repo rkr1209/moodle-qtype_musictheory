@@ -63,6 +63,9 @@ class qtype_musictheory_scale_write extends qtype_musictheory_question implement
             case 'harmonic':
                 $scale = new HarmonicMinorScale($tonic);
                 break;
+            case 'jazzmelodicminor':
+                $scale = new JazzMelodicMinorScale($tonic);
+                break;
             case 'melodic':
                 $scale = new MelodicMinorScale($tonic);
                 break;
@@ -84,8 +87,14 @@ class qtype_musictheory_scale_write extends qtype_musictheory_question implement
             case 'phrygian':
                 $scale = new PhrygianScale($tonic);
                 break;
+            case 'phrygianmajor':
+                $scale = new PhrygianMajorScale($tonic);
+                break;
             case 'lydian':
                 $scale = new LydianScale($tonic);
+                break;
+            case 'lydianb7':
+                $scale = new Lydianb7Scale($tonic);
                 break;
             case 'mixolydian':
                 $scale = new MixolydianScale($tonic);
@@ -95,6 +104,9 @@ class qtype_musictheory_scale_write extends qtype_musictheory_question implement
                 break;
             case 'locrian':
                 $scale = new LocrianScale($tonic);
+                break;
+            case 'altered':
+                $scale = new AlteredScale($tonic);
                 break;
             case 'chromatic':
                 $scale = new ChromaticScale($tonic);
@@ -118,20 +130,6 @@ class qtype_musictheory_scale_write extends qtype_musictheory_question implement
             $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){5}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
         } else if ($this->musictheory_scaletype == 'blues') {
             $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'ionian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'dorian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'phrygian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'lydian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'mixolydian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'aeolian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'locrian') {
-            $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){7}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
         } else if ($this->musictheory_scaletype == 'chromatic') {
             $regex = '/^([A-G](n|\#|b|x|bb)[1-6],){12}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
         } else {
@@ -166,30 +164,9 @@ class qtype_musictheory_scale_write extends qtype_musictheory_question implement
         } else if ($this->musictheory_scaletype == 'blues') {
             $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,7}$/';
             $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,5}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'ionian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'dorian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'phrygian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'lydian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'mixolydian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'aeolian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
-        } else if ($this->musictheory_scaletype == 'locrian') {
-            $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
         } else if ($this->musictheory_scaletype == 'chromatic') {
             $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,13}$/';
-            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,6}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
+            $incompleteregex2 = '/^(([A-G](n|\#|b|x|bb)[1-6]),){0,11}([A-G](n|\#|b|x|bb)[1-6]){1}$/';
 
         } else {
             $incompleteregex = '/^(([A-G](n|\#|b|x|bb)[1-6])?,?){0,8}$/';
@@ -454,4 +431,3 @@ class qtype_musictheory_scale_identify_random extends qtype_musictheory_scale_id
     }
 
 }
-

@@ -811,6 +811,7 @@ class qtype_musictheory_edit_form extends question_edit_form {
             'major'    => get_string('scaletype_major', 'qtype_musictheory'),
             'natural'  => get_string('scaletype_natural', 'qtype_musictheory'),
             'harmonic' => get_string('scaletype_harmonic', 'qtype_musictheory'),
+            'jazzhmelodicminor' => get_string('scaletype_jazzmelodicminor', 'qtype_musictheory'),
             'melodic'  => get_string('scaletype_melodic', 'qtype_musictheory'),
             'pentatonic_major'  => get_string('scaletype_pentatonic_major', 'qtype_musictheory'),
             'pentatonic_minor'  => get_string('scaletype_pentatonic_minor', 'qtype_musictheory'),
@@ -818,10 +819,13 @@ class qtype_musictheory_edit_form extends question_edit_form {
             'ionian'  => get_string('scaletype_ionian', 'qtype_musictheory'),
             'dorian'  => get_string('scaletype_dorian', 'qtype_musictheory'),
             'phrygian'  => get_string('scaletype_phrygian', 'qtype_musictheory'),
+            'phrygianmajor'  => get_string('scaletype_phrygianmajor', 'qtype_musictheory'),
             'lydian'  => get_string('scaletype_lydian', 'qtype_musictheory'),
+            'lydianb7'  => get_string('scaletype_lydianb7', 'qtype_musictheory'),
             'mixolydian'  => get_string('scaletype_mixolydian', 'qtype_musictheory'),
             'aeolian'  => get_string('scaletype_aeolian', 'qtype_musictheory'),
             'locrian'  => get_string('scaletype_locrian', 'qtype_musictheory'),
+            'altered'  => get_string('scaletype_altered', 'qtype_musictheory'),
             'chromatic'  => get_string('scaletype_chromatic', 'qtype_musictheory')
 
         );
@@ -1229,10 +1233,13 @@ class qtype_musictheory_validation {
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'ionian') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'dorian') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'phrygian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'phrygianmajor') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'lydian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'lydianb7') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'mixolydian') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'aeolian') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'locrian') ? 'M' : 'm';
+        $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'altered') ? 'M' : 'm';
         $mode = ($data['musictheory_scaletype'] == 'major' || $data['musictheory_scaletype'] == 'chromatic') ? 'M' : 'm';
 
         $validkeys = Tonality::getValidKeys($mode);
@@ -1385,4 +1392,3 @@ class qtype_musictheory_validation {
     }
 
 }
-

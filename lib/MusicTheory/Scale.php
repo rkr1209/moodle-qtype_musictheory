@@ -265,6 +265,52 @@ class HarmonicMinorScale extends MinorScale {
 }
 
 /**
+ * This class represents a jazz melodic minor scale.
+ */
+class JazzMelodicMinorScale extends MinorScale {
+
+	/**
+	 * Constructor.
+	 *
+	 * @param Note $tonic The tonic of the scale.
+	 * @return void
+	 */
+	public function __construct($tonic) {
+
+		parent::__construct($tonic);
+
+		$int_1 = new Interval('+', 'P', 1);
+		$int_2 = new Interval('+', 'M', 2);
+		$int_3 = new Interval('+', 'm', 3);
+		$int_4 = new Interval('+', 'P', 4);
+		$int_5 = new Interval('+', 'P', 5);
+		$int_6 = new Interval('+', 'M', 6);
+		$int_7 = new Interval('+', 'M', 7);
+		$int_8 = new Interval('+', 'P', 8);
+
+		array_push($this->intSequence, $int_1);
+		array_push($this->intSequence, $int_2);
+		array_push($this->intSequence, $int_3);
+		array_push($this->intSequence, $int_4);
+		array_push($this->intSequence, $int_5);
+		array_push($this->intSequence, $int_6);
+		array_push($this->intSequence, $int_7);
+		array_push($this->intSequence, $int_8);
+	}
+
+	/**
+	 * Returns a string describing the name of the scale (e.g. 'C jazz melodic minor',
+	 * 'F# jazz melodic minor').
+	 *
+	 * @return string The scale name.
+	 */
+	public function getName() {
+		return $this->tonic->getLetterAccidental() . ' jazz melodic minor';
+	}
+
+}
+
+/**
  * This class represents a melodic minor scale.
  */
 class MelodicMinorScale extends MinorScale {
@@ -718,6 +764,72 @@ class PhrygianScale extends Scale {
 }
 
 /**
+ * This class represents a phryigan major mode scale.
+ */
+class PhrygianMajorScale extends Scale {
+
+    /**
+     * Constructor.
+     *
+     * @param Note $tonic The tonic of the scale.
+     * @return void
+     */
+    public function __construct($tonic) {
+
+        parent::__construct($tonic);
+
+					$int_1 = new Interval('+', 'P', 1);
+					$int_2 = new Interval('+', 'm', 2);
+					$int_3 = new Interval('+', 'M', 3);
+					$int_4 = new Interval('+', 'P', 4);
+					$int_5 = new Interval('+', 'P', 5);
+					$int_6 = new Interval('+', 'm', 6);
+					$int_7 = new Interval('+', 'm', 7);
+					$int_8 = new Interval('+', 'P', 8);
+
+					array_push($this->intSequence, $int_1);
+					array_push($this->intSequence, $int_2);
+					array_push($this->intSequence, $int_3);
+					array_push($this->intSequence, $int_4);
+					array_push($this->intSequence, $int_5);
+					array_push($this->intSequence, $int_6);
+					array_push($this->intSequence, $int_7);
+					array_push($this->intSequence, $int_8);
+    }
+
+    /**
+     * Returns a string describing the name of the scale (e.g. 'C Phrygian major mode',
+     * 'Ab Phrygian major mode').
+     *
+     * @return string The scale name.
+     */
+    public function getName() {
+
+        return ((string) $this->tonic . getLetterAccidental()) . ' Phrygian major mode';
+    }
+
+    /**
+     * Return all notes from the scale.
+     *
+     * @return Note[] The scale notes.
+     */
+    public function getScaleDegrees() {
+
+				$degrees = array();
+				array_push($degrees, $this->getScaleDegree(1));
+				array_push($degrees, $this->getScaleDegree(2));
+				array_push($degrees, $this->getScaleDegree(3));
+				array_push($degrees, $this->getScaleDegree(4));
+				array_push($degrees, $this->getScaleDegree(5));
+				array_push($degrees, $this->getScaleDegree(6));
+				array_push($degrees, $this->getScaleDegree(7));
+				array_push($degrees, $this->getScaleDegree(8));
+				return $degrees;
+    }
+
+}
+
+/**
  * This class represents a lydian mode scale.
  */
 class LydianScale extends Scale {
@@ -760,6 +872,72 @@ class LydianScale extends Scale {
     public function getName() {
 
         return ((string) $this->tonic . getLetterAccidental()) . ' Lydian mode';
+    }
+
+    /**
+     * Return all notes from the scale.
+     *
+     * @return Note[] The scale notes.
+     */
+    public function getScaleDegrees() {
+
+				$degrees = array();
+				array_push($degrees, $this->getScaleDegree(1));
+				array_push($degrees, $this->getScaleDegree(2));
+				array_push($degrees, $this->getScaleDegree(3));
+				array_push($degrees, $this->getScaleDegree(4));
+				array_push($degrees, $this->getScaleDegree(5));
+				array_push($degrees, $this->getScaleDegree(6));
+				array_push($degrees, $this->getScaleDegree(7));
+				array_push($degrees, $this->getScaleDegree(8));
+				return $degrees;
+    }
+
+}
+
+/**
+ * This class represents a lydian dominant mode / lydian b7 scale.
+ */
+class Lydianb7Scale extends Scale {
+
+    /**
+     * Constructor.
+     *
+     * @param Note $tonic The tonic of the scale.
+     * @return void
+     */
+    public function __construct($tonic) {
+
+        parent::__construct($tonic);
+
+					$int_1 = new Interval('+', 'P', 1);
+					$int_2 = new Interval('+', 'M', 2);
+					$int_3 = new Interval('+', 'M', 3);
+					$int_4 = new Interval('+', 'A', 4);
+					$int_5 = new Interval('+', 'P', 5);
+					$int_6 = new Interval('+', 'M', 6);
+					$int_7 = new Interval('+', 'm', 7);
+					$int_8 = new Interval('+', 'P', 8);
+
+					array_push($this->intSequence, $int_1);
+					array_push($this->intSequence, $int_2);
+					array_push($this->intSequence, $int_3);
+					array_push($this->intSequence, $int_4);
+					array_push($this->intSequence, $int_5);
+					array_push($this->intSequence, $int_6);
+					array_push($this->intSequence, $int_7);
+					array_push($this->intSequence, $int_8);
+    }
+
+    /**
+     * Returns a string describing the name of the scale (e.g. 'C Lydian dominant mode',
+     * 'Eb Lydian dominant mode').
+     *
+     * @return string The scale name.
+     */
+    public function getName() {
+
+        return ((string) $this->tonic . getLetterAccidental()) . ' Lydian dominant mode';
     }
 
     /**
@@ -978,6 +1156,71 @@ class LocrianScale extends Scale {
 				array_push($degrees, $this->getScaleDegree(8));
         return $degrees;
     }
+}
+
+/**
+ * This class represents an altered scale.
+ */
+class AlteredScale extends Scale {
+
+    /**
+     * Constructor.
+     *
+     * @param Note $tonic The tonic of the scale.
+     * @return void
+     */
+    public function __construct($tonic) {
+
+        parent::__construct($tonic);
+
+					$int_1 = new Interval('+', 'P', 1);
+					$int_2 = new Interval('+', 'm', 2);
+					$int_3 = new Interval('+', 'M', 2);
+					$int_4 = new Interval('+', 'M', 3);
+					$int_5 = new Interval('+', 'A', 4);
+					$int_6 = new Interval('+', 'A', 5);
+					$int_7 = new Interval('+', 'm', 7);
+					$int_8 = new Interval('+', 'P', 8);
+
+					array_push($this->intSequence, $int_1);
+					array_push($this->intSequence, $int_2);
+					array_push($this->intSequence, $int_3);
+					array_push($this->intSequence, $int_4);
+					array_push($this->intSequence, $int_5);
+					array_push($this->intSequence, $int_6);
+					array_push($this->intSequence, $int_7);
+					array_push($this->intSequence, $int_8);
+    }
+
+    /**
+     * Returns a string describing the name of the scale (e.g. 'C Dorian mode',
+     * 'Ab Dorian mode').
+     *
+     * @return string The scale name.
+     */
+    public function getName() {
+
+        return ((string) $this->tonic . getLetterAccidental()) . ' Dorian mode';
+    }
+
+    /**
+     * Return all notes from the scale.
+     *
+     * @return Note[] The scale notes.
+     */
+    public function getScaleDegrees() {
+
+				$degrees = array();
+				array_push($degrees, $this->getScaleDegree(1));
+				array_push($degrees, $this->getScaleDegree(2));
+				array_push($degrees, $this->getScaleDegree(3));
+				array_push($degrees, $this->getScaleDegree(4));
+				array_push($degrees, $this->getScaleDegree(5));
+				array_push($degrees, $this->getScaleDegree(6));
+				array_push($degrees, $this->getScaleDegree(7));
+				array_push($degrees, $this->getScaleDegree(8));
+				return $degrees;
+    }
 
 }
 
@@ -1070,8 +1313,8 @@ class ChromaticScale extends Scale {
 					array_push($this->intSequence, $int_12);
 					array_push($this->intSequence, $int_13);
 						}
-		
-		else if (in_array($tonic, $chromaticDb)) { 
+
+		else if (in_array($tonic, $chromaticDb)) {
 				parent::__construct($tonic);
 					$int_1 = new Interval('+', 'P', 1);
 					$int_2 = new Interval('+', 'm', 2);

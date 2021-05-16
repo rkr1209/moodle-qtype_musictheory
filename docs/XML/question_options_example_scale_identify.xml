@@ -13,8 +13,9 @@
     <displaykeysignature>true</displaykeysignature>
     <scaletype>major</scaletype>
     <possiblescalesinresponse>
-      <possiblescaletype>major</possiblescaletype>
       <possiblescaletype>natural</possiblescaletype>
+      <possiblescaletype>harmonic</possiblescaletype>
+      <possiblescaletype>jazzmelodicminor</possiblescaletype>
       <possiblescaletype>melodic</possiblescaletype>
       <possiblescaletype>pentatonic_major</possiblescaletype>
       <possiblescaletype>pentatonic_minor</possiblescaletype>
@@ -22,9 +23,13 @@
       <possiblescaletype>ionian</possiblescaletype>
       <possiblescaletype>dorian</possiblescaletype>
       <possiblescaletype>phrygian</possiblescaletype>
+      <possiblescaletype>phrygianmajor</possiblescaletype>
+      <possiblescaletype>lydian</possiblescaletype>
+      <possiblescaletype>lydianb7</possiblescaletype>
       <possiblescaletype>mixolydian</possiblescaletype>
       <possiblescaletype>aeolian</possiblescaletype>
       <possiblescaletype>locrian</possiblescaletype>
+      <possiblescaletype>altered</possiblescaletype>
       <possiblescaletype>chromatic</possiblescaletype>
     </possiblescalesinresponse>
   </scale-identify>
