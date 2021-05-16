@@ -454,3 +454,4 @@ class qtype_musictheory_scale_identify_random extends qtype_musictheory_scale_id
     }
 
 }
+

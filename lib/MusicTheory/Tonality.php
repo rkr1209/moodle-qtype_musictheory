@@ -208,6 +208,7 @@ class Tonality {
 			array_push($arr, new Tonality(new Note('F', 'n', 4), false));
 			array_push($arr, new Tonality(new Note('B', 'b', 4), false));
 			array_push($arr, new Tonality(new Note('E', 'b', 4), false));
+			array_push($arr, new Tonality(new Note('G', 'b', 4), false));
 			array_push($arr, new Tonality(new Note('A', 'b', 4), false));
 		}
 
