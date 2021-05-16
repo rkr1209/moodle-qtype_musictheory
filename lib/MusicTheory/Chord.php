@@ -144,33 +144,33 @@ class Chord {
 				$this->intSequence[1] = new Interval('+', 'D', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
 				break;
-			case '9' :
+			case 'dom9' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
 				$this->intSequence[3] = new Interval('+', 'M', 9);
 				break;
-			case '9b' :
+			case 'dom9b' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
 				$this->intSequence[3] = new Interval('+', 'm', 9);
 				break;
-			case '11' :
+			case 'dom11' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
 				$this->intSequence[3] = new Interval('+', 'M', 9);
 				$this->intSequence[4] = new Interval('+', 'P', 11);
 				break;
-			case '11/9b' :
+			case 'domb911' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
 				$this->intSequence[3] = new Interval('+', 'm', 9);
 				$this->intSequence[4] = new Interval('+', 'P', 11);
 				break;
-			case '13' :
+			case 'dom13' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
@@ -178,7 +178,7 @@ class Chord {
 				$this->intSequence[4] = new Interval('+', 'P', 11);
 				$this->intSequence[5] = new Interval('+', 'M', 13);
 				break;
-			case '13/9b' :
+			case 'dom9b13' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);

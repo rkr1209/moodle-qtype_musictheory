@@ -356,14 +356,14 @@ class PentatonicMajorScale extends Scale {
         $int_2 = new Interval('+', 'M', 2);
         $int_3 = new Interval('+', 'M', 3);
         $int_5 = new Interval('+', 'P', 5);
-        $int_7 = new Interval('+', 'M', 6);
+        $int_6 = new Interval('+', 'M', 6);
         $int_8 = new Interval('+', 'P', 8);
 
         array_push($this->intSequence, $int_1);
         array_push($this->intSequence, $int_2);
         array_push($this->intSequence, $int_3);
         array_push($this->intSequence, $int_5);
-        array_push($this->intSequence, $int_7);
+        array_push($this->intSequence, $int_6);
         array_push($this->intSequence, $int_8);
     }
 
@@ -996,7 +996,8 @@ class ChromaticScale extends Scale {
     public function __construct($tonic) {
 
 			$chromaticCn = array('Cn2', 'Cn3', 'Cn4', 'Cn5', 'Cn6');
-			$chromaticCsDb = array('C#2', 'C#3', 'C#4', 'C#5', 'C#6', 'Db2', 'Db3', 'Db4', 'Db5', 'Db6');
+			$chromaticCs = array('C#2', 'C#3', 'C#4', 'C#5', 'C#6');
+			$chromaticDb = array('Db2', 'Db3', 'Db4', 'Db5', 'Db6');
 			$chromaticDn = array('Dn2', 'Dn3', 'Dn4', 'Dn5', 'Dn6');
 			$chromaticDsEb = array('D#2', 'D#3', 'D#4', 'D#5', 'D#6', 'Eb2', 'Eb3', 'Eb4', 'Eb5', 'Eb6');
 			$chromaticEn = array('En2', 'En3', 'En4', 'En5', 'En6'); //TODO
@@ -1039,7 +1040,7 @@ class ChromaticScale extends Scale {
 					array_push($this->intSequence, $int_13);
 						}
 
-			else if (in_array($tonic, $chromaticCsDb)) { //TODO
+			else if (in_array($tonic, $chromaticCs)) {
 				parent::__construct($tonic);
 					$int_1 = new Interval('+', 'P', 1);
 					$int_2 = new Interval('+', 'm', 2);
@@ -1053,6 +1054,37 @@ class ChromaticScale extends Scale {
 					$int_10 = new Interval('+', 'M', 6);
 					$int_11 = new Interval('+', 'm', 7);
 					$int_12 = new Interval('+', 'D', 8);
+					$int_13 = new Interval('+', 'P', 8);
+
+					array_push($this->intSequence, $int_1);
+					array_push($this->intSequence, $int_2);
+					array_push($this->intSequence, $int_3);
+					array_push($this->intSequence, $int_4);
+					array_push($this->intSequence, $int_5);
+					array_push($this->intSequence, $int_6);
+					array_push($this->intSequence, $int_7);
+					array_push($this->intSequence, $int_8);
+					array_push($this->intSequence, $int_9);
+					array_push($this->intSequence, $int_10);
+					array_push($this->intSequence, $int_11);
+					array_push($this->intSequence, $int_12);
+					array_push($this->intSequence, $int_13);
+						}
+		
+		else if (in_array($tonic, $chromaticDb)) { 
+				parent::__construct($tonic);
+					$int_1 = new Interval('+', 'P', 1);
+					$int_2 = new Interval('+', 'm', 2);
+					$int_3 = new Interval('+', 'M', 2);
+					$int_4 = new Interval('+', 'm', 3);
+					$int_5 = new Interval('+', 'M', 3);
+					$int_6 = new Interval('+', 'P', 4);
+					$int_7 = new Interval('+', 'A', 4);
+					$int_8 = new Interval('+', 'P', 5);
+					$int_9 = new Interval('+', 'm', 6);
+					$int_10 = new Interval('+', 'M', 6);
+					$int_11 = new Interval('+', 'm', 7);
+					$int_12 = new Interval('+', 'M', 7);
 					$int_13 = new Interval('+', 'P', 8);
 
 					array_push($this->intSequence, $int_1);
