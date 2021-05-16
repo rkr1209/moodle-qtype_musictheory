@@ -811,7 +811,7 @@ class qtype_musictheory_edit_form extends question_edit_form {
             'major'    => get_string('scaletype_major', 'qtype_musictheory'),
             'natural'  => get_string('scaletype_natural', 'qtype_musictheory'),
             'harmonic' => get_string('scaletype_harmonic', 'qtype_musictheory'),
-            'jazzhmelodicminor' => get_string('scaletype_jazzmelodicminor', 'qtype_musictheory'),
+            'jazzmelodicminor' => get_string('scaletype_jazzmelodicminor', 'qtype_musictheory'),
             'melodic'  => get_string('scaletype_melodic', 'qtype_musictheory'),
             'pentatonic_major'  => get_string('scaletype_pentatonic_major', 'qtype_musictheory'),
             'pentatonic_minor'  => get_string('scaletype_pentatonic_minor', 'qtype_musictheory'),
