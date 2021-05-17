@@ -38,6 +38,7 @@ class Chord {
         "minor6" => "m6",
         "major7" => "MM",
         "minor7" => "mm",
+				"minor7b9" => "m7b9",
         "dom7" => "Mm",
         "halfdiminished" => "Dm",
         "diminished7" => "DD",
@@ -108,6 +109,12 @@ class Chord {
 				$this->intSequence[0] = new Interval('+', 'm', 3);
 				$this->intSequence[1] = new Interval('+', 'P', 5);
 				$this->intSequence[2] = new Interval('+', 'm', 7);
+				break;
+			case 'm7b9' :
+				$this->intSequence[0] = new Interval('+', 'm', 3);
+				$this->intSequence[1] = new Interval('+', 'P', 5);
+				$this->intSequence[2] = new Interval('+', 'm', 7);
+				$this->intSequence[3] = new Interval('+', 'm', 9);
 				break;
 			case 'Mm' :
 				$this->intSequence[0] = new Interval('+', 'M', 3);

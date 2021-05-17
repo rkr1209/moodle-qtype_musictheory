@@ -1175,7 +1175,7 @@ class AlteredScale extends Scale {
 
 					$int_1 = new Interval('+', 'P', 1);
 					$int_2 = new Interval('+', 'm', 2);
-					$int_3 = new Interval('+', 'M', 2);
+					$int_3 = new Interval('+', 'A', 2);
 					$int_4 = new Interval('+', 'M', 3);
 					$int_5 = new Interval('+', 'A', 4);
 					$int_6 = new Interval('+', 'A', 5);
@@ -1193,14 +1193,14 @@ class AlteredScale extends Scale {
     }
 
     /**
-     * Returns a string describing the name of the scale (e.g. 'C Dorian mode',
-     * 'Ab Dorian mode').
+     * Returns a string describing the name of the scale (e.g. 'C altered',
+     * 'Ab altered').
      *
      * @return string The scale name.
      */
     public function getName() {
 
-        return ((string) $this->tonic . getLetterAccidental()) . ' Dorian mode';
+        return ((string) $this->tonic . getLetterAccidental()) . ' altered';
     }
 
     /**

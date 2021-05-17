@@ -194,6 +194,7 @@ $string['major6'] = 'Major 6 (German Augmented 6th)';
 $string['minor6'] = 'Minor 6';
 $string['major7'] = 'Major 7';
 $string['minor7'] = 'Minor 7';
+$string['minor7b9'] = 'Minor 7b9';
 $string['dom7'] = 'Dominant 7';
 $string['halfdiminished'] = 'Half-diminished (Minor 7 b5)';
 $string['diminished7'] = 'Diminished 7';
